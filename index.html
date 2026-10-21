@@ -3,77 +3,50 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zulaykha Doobory</title>
-<meta name="description" content="Software engineer portfolio -- full-stack platforms, developer tooling, and the engineering behind them, including the BDO TaaS platform and MauriVent.">
+<title>Zulaykha Doobory — Full-Stack &amp; AI Developer</title>
+<meta name="description" content="Full-stack and AI developer portfolio -- production web platforms, AI-powered tooling and community apps, including the BDO TaaS platform and HalaalMoris.">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
 
+  /* Dark-only theme: periwinkle accent, mint for "live" states, a touch of pink */
   :root{
-    --bg:#F3F6F4;
-    --surface:#FFFFFF;
-    --surface-2:#E8EDE9;
-    --ink:#101A17;
-    --ink-dim:#516158;
-    --border:#D2DAD5;
-    --accent:#A8660A;
-    --accent-ink:#FFFFFF;
-    --accent-soft:#F1E1C4;
-    --pass:#2E8B57;
-    --pass-soft:#DCEEE2;
-    --fail:#B23A2E;
-    --fail-soft:#F5DEDA;
-    --shadow:0 1px 2px rgba(16,26,23,.06), 0 10px 26px -14px rgba(16,26,23,.16);
-    --grid-line: rgba(16,26,23,.05);
-  }
-  @media (prefers-color-scheme: dark){
-    :root:not([data-theme="light"]){
-      --bg:#0D1512;
-      --surface:#15201B;
-      --surface-2:#1B2620;
-      --ink:#E9F0EB;
-      --ink-dim:#9FB2A8;
-      --border:#293830;
-      --accent:#E3A544;
-      --accent-ink:#171106;
-      --accent-soft:#3A2B10;
-      --pass:#4FAE7C;
-      --pass-soft:#15301F;
-      --fail:#E17869;
-      --fail-soft:#3A1C17;
-      --shadow:0 1px 2px rgba(0,0,0,.4), 0 14px 32px -16px rgba(0,0,0,.6);
-      --grid-line: rgba(233,240,235,.05);
-    }
-  }
-  :root[data-theme="dark"]{
-    --bg:#0D1512;
-    --surface:#15201B;
-    --surface-2:#1B2620;
-    --ink:#E9F0EB;
-    --ink-dim:#9FB2A8;
-    --border:#293830;
-    --accent:#E3A544;
-    --accent-ink:#171106;
-    --accent-soft:#3A2B10;
-    --pass:#4FAE7C;
-    --pass-soft:#15301F;
-    --fail:#E17869;
-    --fail-soft:#3A1C17;
-    --shadow:0 1px 2px rgba(0,0,0,.4), 0 14px 32px -16px rgba(0,0,0,.6);
-    --grid-line: rgba(233,240,235,.05);
+    color-scheme:dark;
+    --bg:#0A0D14;
+    --surface:#111622;
+    --surface-2:#171E2D;
+    --ink:#E9ECF5;
+    --ink-dim:#97A1B8;
+    --border:#232C3F;
+    --accent:#9DB4FF;
+    --accent-ink:#0A0D14;
+    --pink:#F4A6C8;
+    --pink-soft:rgba(244,166,200,.12);
+    --pass:#6FD9AA;
+    --pass-soft:rgba(111,217,170,.12);
+    --fail:#F08A7E;
+    --fail-soft:rgba(240,138,126,.12);
+    --shadow:0 1px 2px rgba(0,0,0,.45), 0 18px 40px -20px rgba(0,0,0,.75);
+    --grid-line:rgba(233,236,245,.035);
   }
 
   *{box-sizing:border-box;}
   @media (prefers-reduced-motion: reduce){
     *{animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important;}
   }
+  ::selection{background:var(--pink); color:var(--accent-ink);}
 
   body{
-    background:var(--bg);
+    margin:0;
+    background:
+      radial-gradient(900px 500px at 85% -10%, rgba(244,166,200,.08), transparent 60%),
+      radial-gradient(800px 600px at -10% 10%, rgba(157,180,255,.07), transparent 60%),
+      var(--bg);
+    background-attachment:fixed;
     color:var(--ink);
     font-family:'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif;
     font-size:16px;
     line-height:1.6;
-    padding:0 20px;
+    padding:0 16px;
   }
 
   a{color:var(--accent);}
@@ -110,8 +83,8 @@
   }
   .brand .dot{
     width:9px; height:9px; border-radius:50%;
-    background:var(--pass);
-    box-shadow:0 0 0 3px var(--pass-soft);
+    background:var(--pink);
+    box-shadow:0 0 0 3px var(--pink-soft), 0 0 12px var(--pink);
     flex:none;
   }
   nav.links{
@@ -134,7 +107,7 @@
     font-family:'IBM Plex Mono'; font-size:.82rem; color:var(--ink-dim);
     margin-bottom:18px;
   }
-  .prompt-line .prompt-user{color:var(--pass);}
+  .prompt-line .prompt-user{color:var(--pink);}
   .prompt-line .prompt-path{color:var(--accent);}
   .prompt-line::after{
     content:'';
@@ -144,7 +117,11 @@
   }
   @keyframes blink{50%{opacity:0;}}
 
-  h1.name{font-size:clamp(2.1rem, 5vw, 3.1rem); font-weight:800; letter-spacing:-.01em;}
+  h1.name{
+    font-size:clamp(2.1rem, 5vw, 3.1rem); font-weight:800; letter-spacing:-.01em;
+    background:linear-gradient(100deg, var(--ink) 55%, var(--accent) 85%, var(--pink));
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
   .role{font-family:'Sora'; font-weight:600; color:var(--ink-dim); margin-top:6px; font-size:1.05rem;}
   .lede{
     max-width:62ch; margin-top:20px; font-size:1.04rem; color:var(--ink);
@@ -162,6 +139,7 @@
   }
   .btn:hover{transform:translateY(-1px);}
   .btn-primary{background:var(--accent); color:var(--accent-ink); box-shadow:var(--shadow);}
+  .btn-primary:hover{box-shadow:0 8px 24px -8px rgba(157,180,255,.55);}
   .btn-ghost{background:transparent; color:var(--ink); border-color:var(--border);}
   .btn-ghost:hover{border-color:var(--accent); color:var(--accent);}
 
@@ -197,6 +175,7 @@
     display:flex; align-items:center; justify-content:center;
     color:var(--pass); font-size:1.05rem;
   }
+  .stage:nth-child(3) .node{border-color:var(--pink); color:var(--pink); box-shadow:0 0 16px var(--pink-soft);}
   .stage .label{
     font-family:'IBM Plex Mono'; font-size:.68rem; letter-spacing:.1em;
     text-transform:uppercase; color:var(--ink-dim); text-align:center;
@@ -206,7 +185,7 @@
   section{padding:56px 0; border-top:1px solid var(--border);}
   .section-head{display:flex; align-items:baseline; gap:14px; margin-bottom:28px;}
   .section-head h2{font-size:1.5rem; font-weight:700;}
-  .section-num{font-family:'IBM Plex Mono'; color:var(--border); font-size:1.3rem; font-weight:600;}
+  .section-num{font-family:'IBM Plex Mono'; color:var(--pink); opacity:.7; font-size:1.3rem; font-weight:600;}
 
   p.body-text{max-width:68ch; color:var(--ink);}
   p.body-text + p.body-text{margin-top:14px;}
@@ -248,9 +227,12 @@
     gap:16px;
   }
   .skill-card{
-    background:var(--surface); border:1px solid var(--border); border-radius:8px;
+    background:linear-gradient(180deg, var(--surface-2), var(--surface));
+    border:1px solid var(--border); border-radius:12px;
     padding:16px 18px;
+    transition:border-color .2s ease;
   }
+  .skill-card:hover{border-color:color-mix(in srgb, var(--accent) 45%, var(--border));}
   .skill-card h3{
     font-family:'IBM Plex Mono'; font-size:.72rem; letter-spacing:.1em; text-transform:uppercase;
     color:var(--ink-dim); font-weight:600; margin-bottom:10px;
@@ -258,17 +240,24 @@
   .tags{display:flex; flex-wrap:wrap; gap:7px;}
   .tag{
     font-family:'IBM Plex Mono'; font-size:.78rem;
-    background:var(--surface-2); border:1px solid var(--border);
-    border-radius:5px; padding:3px 9px; color:var(--ink);
+    background:rgba(157,180,255,.06); border:1px solid var(--border);
+    border-radius:6px; padding:3px 9px; color:var(--ink);
   }
 
   /* ---------- projects ---------- */
   .projects{display:flex; flex-direction:column; gap:16px;}
   .project{
-    background:var(--surface); border:1px solid var(--border); border-radius:10px;
+    position:relative; overflow:hidden;
+    background:linear-gradient(160deg, var(--surface-2), var(--surface) 55%);
+    border:1px solid var(--border); border-radius:14px;
     padding:22px 24px; box-shadow:var(--shadow);
-    border-left:3px solid var(--accent);
+    transition:transform .2s ease, border-color .2s ease;
   }
+  .project::before{
+    content:''; position:absolute; left:0; top:0; bottom:0; width:3px;
+    background:linear-gradient(180deg, var(--accent), var(--pink));
+  }
+  .project:hover{transform:translateY(-2px); border-color:color-mix(in srgb, var(--accent) 40%, var(--border));}
   .project-head{display:flex; justify-content:space-between; align-items:flex-start; gap:12px; flex-wrap:wrap;}
   .project h3{font-size:1.12rem; font-weight:700;}
   .project-status{
@@ -284,24 +273,6 @@
   .project .links{margin-top:12px; display:flex; gap:16px; font-family:'IBM Plex Mono'; font-size:.82rem;}
   .project .links a{text-decoration:none;}
   .project .links a:hover{text-decoration:underline;}
-
-  /* ---------- repos ---------- */
-  .repo-grid{
-    display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
-    gap:14px; margin-top:22px;
-  }
-  .repo-card{
-    border:1px solid var(--border); border-radius:8px; padding:14px 16px;
-    background:var(--surface);
-    text-decoration:none; color:var(--ink);
-    display:flex; flex-direction:column; gap:6px;
-    transition:border-color .15s ease;
-  }
-  .repo-card:hover{border-color:var(--accent);}
-  .repo-name{font-family:'IBM Plex Mono'; font-weight:600; font-size:.9rem; color:var(--ink); display:flex; align-items:center; gap:6px;}
-  .repo-desc{font-size:.85rem; color:var(--ink-dim);}
-  .repo-lang{font-family:'IBM Plex Mono'; font-size:.72rem; color:var(--ink-dim); margin-top:auto;}
-  .repo-lang::before{content:'●'; color:var(--accent); margin-right:5px;}
 
   /* ---------- footer ---------- */
   footer{padding:44px 0 60px; border-top:1px solid var(--border);}
@@ -355,9 +326,9 @@
   <section class="hero" style="border-top:none;">
     <div class="prompt-line"><span class="prompt-user">zulaykha</span>@<span class="prompt-path">engineering</span>:~$ whoami</div>
     <h1 class="name">Zulaykha Doobory</h1>
-    <div class="role">Software Engineer — Full-Stack &amp; Platform Tooling</div>
-    <p class="lede"><strong>Software engineer who architects full-stack platforms and the developer tooling around them.</strong> Builds end-to-end in .NET, React, Java and C++, backed by hands-on DevOps, network-security and QA engineering expertise.</p>
-    <p class="lede secondary">Architected and built BDO's proprietary AI-driven TaaS platform end-to-end — now headed for launch as a new firm-wide service line — and led an 8-person cross-functional squad as lead developer to take a full-stack client platform from kickoff to production in six weeks.</p>
+    <div class="role">Full-Stack &amp; AI Developer</div>
+    <p class="lede"><strong>Full-stack developer who builds production web platforms and AI-powered products end to end.</strong> Ships across .NET, React, Python, Java and C++ — from database and API design to UI and LLM-driven agents — backed by hands-on DevOps, security and quality engineering.</p>
+    <p class="lede secondary">Architected and built BDO's proprietary agentic-AI TaaS platform end-to-end, and as lead developer took a full-stack client platform from kickoff to production in six weeks.</p>
     <div class="cta-row">
       <a class="btn btn-primary" href="https://github.com/Zulaykha-Doobory" target="_blank" rel="noopener">View GitHub ↗</a>
       <a class="btn btn-ghost" href="mailto:zulaykha.doobory@gmail.com">Email me</a>
@@ -369,16 +340,16 @@
       <div class="pipeline">
         <div class="stage"><div class="node">◐</div><div class="label">Architect</div></div>
         <div class="stage"><div class="node">▶</div><div class="label">Build full-stack</div></div>
-        <div class="stage"><div class="node">⇄</div><div class="label">Integrate &amp; test</div></div>
-        <div class="stage"><div class="node">✓</div><div class="label">Ship</div></div>
+        <div class="stage"><div class="node">✦</div><div class="label">Add AI</div></div>
+        <div class="stage"><div class="node">✓</div><div class="label">Test &amp; ship</div></div>
       </div>
     </div>
   </section>
 
   <section id="about">
     <div class="section-head"><span class="section-num">01</span><h2>About</h2></div>
-    <p class="body-text">Zulaykha is a software engineer at BDO IT Consulting in Mauritius, building full-stack platforms and the internal tooling that runs alongside them — architecting systems, writing production code across .NET, React, Java and C++, and hardening what she ships with her own DevOps and security background. Her diploma in Electronics with Computer Science from the University of Mauritius shows up throughout her career in how she treats software: as a system to be designed and built end-to-end, not assembled from parts.</p>
-    <p class="body-text">Early on, she worked on the electronics and software team behind <strong>MauriVent</strong>, a citizen-built mechanical ventilator prototype developed in Mauritius during the COVID-19 pandemic — a 25-person volunteer effort that turned a manual bag-valve mask into an automated device with adjustable breathing parameters, built for roughly Rs 15,000. That instinct for building working systems under real constraints carries straight through to the platforms she architects today.</p>
+    <p class="body-text">Zulaykha is a full-stack and AI developer at BDO IT Consulting in Mauritius, building web platforms and AI-powered tools — architecting systems, writing production code across .NET, React, Python, Java and C++, wiring LLM agents into real workflows, and hardening what she ships with her own DevOps and security background. Her BSc in Electronics with Computer Science from the University of Mauritius shows up in how she treats software: as a system to be designed and built end-to-end, not assembled from parts.</p>
+    <p class="body-text">Early on, she worked on the electronics and software team behind <strong>MauriVent</strong>, a citizen-built mechanical ventilator prototype developed in Mauritius during the COVID-19 pandemic — a 25-person volunteer effort that turned a manual bag-valve mask into an automated device with adjustable breathing parameters, built for roughly Rs 15,000. That instinct for building working systems under real constraints — and for building them for her community — carries straight through to what she builds today, from enterprise AI tooling to apps like HalaalMoris and a poverty-relief platform for the Muslim community.</p>
   </section>
 
   <section id="experience">
@@ -391,17 +362,17 @@
           <span class="job-role">Senior Analyst, Software &amp; QA Engineering</span>
           <span class="job-current">Current</span>
         </div>
-        <div class="job-meta"><span>Feb 2026 – Present</span><span>Mauritius (Hybrid)</span></div>
+        <div class="job-meta"><span>Mauritius (Hybrid)</span></div>
         <ul>
-          <li><strong>TotalEnergies project — lead developer:</strong> led a cross-functional squad of 8 (4 developers, 3 QA engineers, 1 cybersecurity specialist) from kickoff to production in six weeks. Built the platform full-stack (.NET backend, React frontend) on MariaDB/MySQL, owned code review across the squad, and personally ran and remediated penetration testing before go-live.</li>
-          <li><strong>TaaS platform — solutions architect &amp; engineer:</strong> designed and built BDO's in-house AI platform start to finish, from solutions architecture through implementation. It automates the full delivery-testing loop end-to-end — exploring the product, generating test plans and cases, executing them in a real browser, filing issues straight to Azure DevOps/Jira, and handing developers one-command fixes inside their VS Code AI agent. Presented at DevCon 2026 and the Quarterly Meeting; on track to become a new BDO service line.</li>
+          <li><strong>TotalEnergies project — lead developer:</strong> led the development team from kickoff to production in six weeks. Built the platform full-stack (.NET backend, React frontend) on MariaDB/MySQL, owned code review across the team, and personally ran and remediated penetration testing before go-live.</li>
+          <li><strong>TaaS platform — solutions architect &amp; engineer:</strong> designed and built BDO's in-house AI platform start to finish, from solutions architecture through implementation. It automates the full delivery-testing loop end-to-end — exploring the product, generating test plans and cases, executing them in a real browser, filing issues straight to Azure DevOps/Jira, and handing developers one-command fixes inside their VS Code AI agent. Presented at DevCon 2026 and the Quarterly Meeting.</li>
           <li><strong>BDO Canada, EFOnline project (3 months):</strong> took ownership of a live Canadian client platform, building its automation framework from zero alongside manual testing.</li>
         </ul>
       </div>
 
       <div class="job">
         <div class="job-head"><span class="job-company">Groupe GDS</span><span class="job-role">Software Test Engineer (QA)</span></div>
-        <div class="job-meta"><span>Nov 2024 – Feb 2026</span><span>Port Louis, Mauritius</span></div>
+        <div class="job-meta"><span>Port Louis, Mauritius</span></div>
         <ul>
           <li><strong>Framework design:</strong> built and owned the master "Cahier de Recette" test plan and validation framework for the GEROBA application, enforcing strict gates on every production deployment.</li>
           <li><strong>Process &amp; reporting:</strong> delivered 20+ audit reports driving Go/No-Go decisions and standardized Jira workflows to cut developer/QA ticket "ping-pong."</li>
@@ -411,7 +382,7 @@
 
       <div class="job">
         <div class="job-head"><span class="job-company">Naveo — Navigation &amp; Geocoding Technologies</span><span class="job-role">Functional &amp; QA Analyst</span></div>
-        <div class="job-meta"><span>Jul 2024 – Oct 2024</span><span>Mauritius (Hybrid)</span></div>
+        <div class="job-meta"><span>Mauritius (Hybrid)</span></div>
         <ul>
           <li><strong>Automation &amp; integration:</strong> designed the test automation architecture for product QA and ran smoke/integration testing across low-code and legacy systems.</li>
           <li><strong>Performance engineering:</strong> wrote complex SQL scripts to stress-test system performance and validate data integrity against spec.</li>
@@ -420,7 +391,7 @@
 
       <div class="job">
         <div class="job-head"><span class="job-company">Accenture Mauritius</span><span class="job-role">QA Engineering Associate</span></div>
-        <div class="job-meta"><span>May 2023 – Jun 2024</span><span>Mauritius (Hybrid)</span></div>
+        <div class="job-meta"><span>Mauritius (Hybrid)</span></div>
         <ul>
           <li>Built automated test suites that cut manual regression time for major releases.</li>
           <li>Owned end-to-end testing scope for enterprise-grade French clients — zero critical defects reached production.</li>
@@ -429,10 +400,19 @@
 
       <div class="job">
         <div class="job-head"><span class="job-company">Dayforce (Ceridian)</span><span class="job-role">Technical Consultant</span></div>
-        <div class="job-meta"><span>Oct 2021 – May 2023</span><span>Mauritius</span></div>
+        <div class="job-meta"><span>Mauritius</span></div>
         <ul>
           <li>Developed SQL database scripts and XML transformers for complex international payroll integrations.</li>
           <li>Validated system logic against strict audit requirements — 100% compliance across UK, US and Canadian markets.</li>
+        </ul>
+      </div>
+
+      <div class="job">
+        <div class="job-head"><span class="job-company">itelligence Business Solutions</span><span class="job-role">Software Developer Intern</span></div>
+        <div class="job-meta"><span>Mauritius</span></div>
+        <ul>
+          <li><strong>La Vallée des Couleurs — solo full-stack build:</strong> designed and built an internal application for the nature park single-handedly, owning the database, backend and frontend end to end.</li>
+          <li><strong>Community poverty-relief app:</strong> built an application to help alleviate social poverty within the Muslim community, connecting those in need with support.</li>
         </ul>
       </div>
 
@@ -446,7 +426,7 @@
       <div class="project">
         <div class="project-head">
           <h3>TaaS — AI-Driven Testing-as-a-Service</h3>
-          <span class="project-status status-shipped">Shipping as a service line</span>
+          <span class="project-status status-shipped">Agentic AI platform</span>
         </div>
         <div class="project-org">BDO IT Consulting · Solutions architecture &amp; full-stack engineering</div>
         <p class="body-text">An in-house platform that runs the entire QA lifecycle autonomously — exploring the product under test, drafting test plans, writing and self-verifying test cases (stripping out hallucinated ones), executing them in a real browser, filing bugs directly to Azure DevOps/Jira, and handing developers one-command fixes inside their VS Code AI agent. Presented at DevCon 2026 and BDO's Quarterly Meeting.</p>
@@ -458,8 +438,35 @@
           <h3>TotalEnergies platform — kickoff to production in 6 weeks</h3>
           <span class="project-status status-shipped">0 → prod in 6 weeks</span>
         </div>
-        <div class="project-org">BDO IT Consulting · Lead developer, squad of 8</div>
-        <p class="body-text">Led 4 developers, 3 QA engineers and a cybersecurity specialist to take a full-stack client platform (.NET backend, React frontend, MariaDB/MySQL) live in six weeks. Owned code review end to end, then personally ran penetration testing and closed every finding before go-live.</p>
+        <div class="project-org">BDO IT Consulting · Lead developer</div>
+        <p class="body-text">Led the development team to take a full-stack client platform (.NET backend, React frontend, MariaDB/MySQL) live in six weeks. Owned code review end to end, then personally ran penetration testing and closed every finding before go-live.</p>
+      </div>
+
+      <div class="project">
+        <div class="project-head">
+          <h3>HalaalMoris — halaal verification for Mauritius</h3>
+          <span class="project-status status-shipped">Contributor</span>
+        </div>
+        <div class="project-org">Community app · Development contributor</div>
+        <p class="body-text">Helped develop an app that brings halaal information in Mauritius into one place, covering all three of the country's halaal certifying bodies. Users can scan a product to see whether it is halaal in Mauritius, scan a halaal certificate to verify that it is authentic, and look up restaurants and snack outlets to check whether they are certified.</p>
+      </div>
+
+      <div class="project">
+        <div class="project-head">
+          <h3>La Vallée des Couleurs — internal app</h3>
+          <span class="project-status status-shipped">Solo full-stack build</span>
+        </div>
+        <div class="project-org">itelligence Business Solutions · Internship</div>
+        <p class="body-text">An internal business application for La Vallée des Couleurs nature park, built single-handedly — data model, backend, frontend and delivery.</p>
+      </div>
+
+      <div class="project">
+        <div class="project-head">
+          <h3>Community poverty-relief app</h3>
+          <span class="project-status status-shipped">Social impact</span>
+        </div>
+        <div class="project-org">itelligence Business Solutions · Internship</div>
+        <p class="body-text">An application aimed at alleviating social poverty within the Muslim community, helping connect families in need with the support available to them.</p>
       </div>
 
       <div class="project">
@@ -467,30 +474,11 @@
           <h3>MauriVent — 100% Mauritian ventilator prototype</h3>
           <span class="project-status status-shipped">Electronics &amp; software team</span>
         </div>
-        <div class="project-org">Volunteer citizen initiative · COVID-19 response, Mauritius, 2020</div>
+        <div class="project-org">Volunteer citizen initiative · COVID-19 response, Mauritius</div>
         <p class="body-text">A ~25-person volunteer effort that designed and built a mechanical ventilator prototype entirely in Mauritius to support COVID-19 patient care, converting a bag-valve mask into an automated device with adjustable breathing rate, volume and inspiration-expiration ratio shown on an LCD screen.</p>
         <div class="links"><a href="https://defisante.defimedia.info/maladies/traitement-du-covid-19-maurivent-le-prototype-dun-ventilateur-mecanique-100-mauricien/" target="_blank" rel="noopener">Coverage ↗</a></div>
       </div>
 
-    </div>
-
-    <div class="eyebrow" style="margin-top:36px;">Selected repositories</div>
-    <div class="repo-grid">
-      <a class="repo-card" href="https://github.com/Zulaykha-Doobory/taas_app" target="_blank" rel="noopener">
-        <div class="repo-name">taas_app</div>
-        <div class="repo-desc">Full-stack platform for AI-augmented software testing.</div>
-        <div class="repo-lang">Python</div>
-      </a>
-      <a class="repo-card" href="https://github.com/Zulaykha-Doobory/Electronicsminiproject" target="_blank" rel="noopener">
-        <div class="repo-name">Electronicsminiproject</div>
-        <div class="repo-desc">Work from her first vacation training in electronics.</div>
-        <div class="repo-lang">Embedded</div>
-      </a>
-      <a class="repo-card" href="https://github.com/Zulaykha-Doobory/6-seconds-delay-pulse" target="_blank" rel="noopener">
-        <div class="repo-name">6-seconds-delay-pulse</div>
-        <div class="repo-desc">Timed pulse-delay circuit/firmware project.</div>
-        <div class="repo-lang">Embedded</div>
-      </a>
     </div>
   </section>
 
@@ -499,34 +487,34 @@
     <div class="skills-grid">
       <div class="skill-card">
         <h3>Full-stack</h3>
-        <div class="tags"><span class="tag">.NET</span><span class="tag">React</span><span class="tag">Java</span><span class="tag">C++</span><span class="tag">JavaScript</span><span class="tag">MariaDB</span><span class="tag">MySQL</span></div>
+        <div class="tags"><span class="tag">.NET / C#</span><span class="tag">ASP.NET Core</span><span class="tag">Entity Framework</span><span class="tag">React</span><span class="tag">TypeScript</span><span class="tag">JavaScript</span><span class="tag">Node.js</span><span class="tag">Python</span><span class="tag">Java</span><span class="tag">C++</span><span class="tag">HTML / CSS</span><span class="tag">REST APIs</span><span class="tag">MariaDB</span><span class="tag">MySQL</span><span class="tag">SQL Server</span></div>
+      </div>
+      <div class="skill-card">
+        <h3>AI engineering</h3>
+        <div class="tags"><span class="tag">LLM integration</span><span class="tag">Agentic workflows</span><span class="tag">Prompt engineering</span><span class="tag">AI coding agents</span><span class="tag">Hallucination guards</span><span class="tag">Browser automation</span></div>
       </div>
       <div class="skill-card">
         <h3>DevOps</h3>
-        <div class="tags"><span class="tag">Docker</span><span class="tag">Kubernetes</span><span class="tag">Jenkins</span><span class="tag">Git</span><span class="tag">Azure DevOps</span></div>
+        <div class="tags"><span class="tag">Docker</span><span class="tag">Docker Compose</span><span class="tag">Kubernetes</span><span class="tag">Jenkins</span><span class="tag">GitHub Actions</span><span class="tag">CI/CD</span><span class="tag">Git</span><span class="tag">Azure DevOps</span><span class="tag">Linux</span><span class="tag">Nginx</span></div>
       </div>
       <div class="skill-card">
         <h3>Engineering leadership</h3>
-        <div class="tags"><span class="tag">Cross-functional Dev/QA/Security leadership</span><span class="tag">Solutions architecture</span></div>
+        <div class="tags"><span class="tag">Technical leadership</span><span class="tag">Solutions architecture</span><span class="tag">Code review</span><span class="tag">Agile / Scrum</span></div>
       </div>
       <div class="skill-card">
         <h3>Security</h3>
-        <div class="tags"><span class="tag">Penetration testing</span><span class="tag">Vulnerability analysis</span><span class="tag">TCP/IP</span><span class="tag">OSI</span><span class="tag">VLANs</span></div>
+        <div class="tags"><span class="tag">Penetration testing</span><span class="tag">Vulnerability analysis</span><span class="tag">OWASP Top 10</span><span class="tag">Burp Suite</span><span class="tag">OWASP ZAP</span><span class="tag">Nmap</span><span class="tag">Wireshark</span><span class="tag">Secure coding</span><span class="tag">Auth (JWT / OAuth)</span><span class="tag">TCP/IP</span><span class="tag">VLANs</span></div>
       </div>
       <div class="skill-card">
-        <h3>Test automation</h3>
-        <div class="tags"><span class="tag">Selenium</span><span class="tag">Postman</span><span class="tag">SOAP UI</span><span class="tag">Bash</span><span class="tag">SQL / PL-SQL</span></div>
-      </div>
-      <div class="skill-card">
-        <h3>QA methodology</h3>
-        <div class="tags"><span class="tag">TDD/BDD</span><span class="tag">ITIL</span><span class="tag">Regression</span><span class="tag">API testing</span><span class="tag">Mobile (Android/iOS)</span></div>
+        <h3>Quality engineering</h3>
+        <div class="tags"><span class="tag">TDD/BDD</span><span class="tag">Selenium</span><span class="tag">Postman</span><span class="tag">API testing</span><span class="tag">SQL / PL-SQL</span><span class="tag">Mobile (Android/iOS)</span></div>
       </div>
     </div>
   </section>
 
   <section>
     <div class="section-head"><span class="section-num">05</span><h2>Education</h2></div>
-    <p class="body-text"><strong>Diploma in Electronics with Computer Science</strong> — Faculty of Engineering, University of Mauritius.</p>
+    <p class="body-text"><strong>BSc Electronics with Computer Science</strong> — Faculty of Engineering, University of Mauritius.</p>
   </section>
 
 </div>
@@ -536,9 +524,9 @@
     <div class="contact-grid">
       <div class="contact-block">
         <h2>Let's talk shop</h2>
-        <p>Open to conversations about software architecture, full-stack engineering, or platform tooling — reach out any time.</p>
+        <p>Open to full-stack and AI development roles, and to conversations about software architecture or AI-powered products — reach out any time.</p>
         <div class="lang-row">
-          <span class="lang-chip">English</span><span class="lang-chip">French</span><span class="lang-chip">Arabic</span><span class="lang-chip">Urdu</span>
+          <span class="lang-chip">Arabic (Native)</span><span class="lang-chip">English (Full proficiency)</span><span class="lang-chip">French (Full proficiency)</span><span class="lang-chip">Urdu (Full proficiency)</span>
         </div>
       </div>
       <div class="contact-list">
@@ -549,7 +537,7 @@
       </div>
     </div>
     <div class="foot-note">
-      <span>Zulaykha Doobory — Software Engineer</span>
+      <span>Zulaykha Doobory — Full-Stack &amp; AI Developer</span>
       <span>Built with care, one commit at a time.</span>
     </div>
   </div>
